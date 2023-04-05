@@ -22,7 +22,7 @@
 
 A python project that allows you to calculate the critical path of a graph. 
 
-tables have the following structure :
+Tables are .txt files with the following structure :
 
  -------------- ---------- --------------
 | num_activity | duration | predecessors |
