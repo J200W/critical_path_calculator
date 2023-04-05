@@ -14,3 +14,7 @@ tables have the following structure :
  -------------- ---------- --------------
  
 graph : 1 --(12)--> 2 --(4)--> 3
+
+Have fun !
+
+
