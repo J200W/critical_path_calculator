@@ -160,7 +160,7 @@ class Main:
                     for p in range(len(path)):
                         if p == len(path) - 1:
                             print(path[p])
-                            print_path += path[p] + " -> "
+                            print_path += path[p]
                         else:
                             print(path[p], end=" -> ")
                             print_path += path[p] + " -> "
