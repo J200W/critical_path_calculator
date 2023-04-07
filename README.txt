@@ -39,6 +39,8 @@ Tables are .txt files with the following structure :
 graph : 1 --(12)--> 2 --(4)--> 3 --(18)--> 4
                     \__________(4)_________^
 
+See my examples in the folder named "execution traces".
+
 Have fun !
 
 
