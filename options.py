@@ -8,6 +8,8 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', None)
 
+nb_of_files = 12
+
 welcome = ("\n"
            " _  _  _ _______ _       ______ _____  ______  _______ \n"
            "| || || (_______) |     / _____) ___ \\|  ___ \\(_______)\n"
