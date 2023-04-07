@@ -1,0 +1,121 @@
+
+Enter the number of the table: 4
+
+We add a new entry 'a' to the table of constraints.
+We add a new exit 'w' to the table of constraints.
+
+
+Number of old entries: 1 | List of old entries: ['1', '2']
+Number of old exits: 1 | List of old exits: ['10', '11']
+
+Tables of constraints n°4:
+
+Tasks  Duration Constraints
+a             0          []
+1             3         [a]
+2             2         [a]
+3             3         [2]
+4             5         [1]
+5             4         [4]
+6             2         [5]
+7             2         [4]
+8             4      [5, 7]
+9             5         [4]
+10            1      [3, 9]
+11            2      [6, 8]
+w             0    [10, 11]
+
+
+Value matrix n°4:
+
+Tasks  a  1  2  3  4  5  6  7  8  9 10 11  w
+a      -  0  0  -  -  -  -  -  -  -  -  -  -
+1      -  -  -  -  3  -  -  -  -  -  -  -  -
+2      -  -  -  2  -  -  -  -  -  -  -  -  -
+3      -  -  -  -  -  -  -  -  -  -  3  -  -
+4      -  -  -  -  -  5  -  5  -  5  -  -  -
+5      -  -  -  -  -  -  4  -  4  -  -  -  -
+6      -  -  -  -  -  -  -  -  -  -  -  2  -
+7      -  -  -  -  -  -  -  -  2  -  -  -  -
+8      -  -  -  -  -  -  -  -  -  -  -  4  -
+9      -  -  -  -  -  -  -  -  -  -  5  -  -
+10     -  -  -  -  -  -  -  -  -  -  -  -  1
+11     -  -  -  -  -  -  -  -  -  -  -  -  2
+w      -  -  -  -  -  -  -  -  -  -  -  -  -
+
+Method of eliminating entry points
+
+Entry point(s) found: ['a']
+Removing entry point(s)...
+
+Entry point(s) found: ['1', '2']
+Removing entry point(s)...
+
+Entry point(s) found: ['3', '4']
+Removing entry point(s)...
+
+Entry point(s) found: ['5', '7', '9']
+Removing entry point(s)...
+
+Entry point(s) found: ['6', '8', '10']
+Removing entry point(s)...
+
+Entry point(s) found: ['11']
+Removing entry point(s)...
+
+Entry point(s) found: ['w']
+Removing entry point(s)...
+
+No more task in the graph...
+
+The graph n°4 contains a cycle : False
+The graph n°4 contains a negative duration : False
+The graph n°4 is a scheduling graph.
+
+Rank table n°4: 
+
+Task Rank
+a       0
+1       1
+2       1
+3       2
+4       2
+5       3
+7       3
+9       3
+6       4
+8       4
+10      4
+11      5
+w       6
+
+Earliest date table n°4: 
+
+Rank                0     1     1     2     2     3     3     3     4       4       4       5         6
+Task & duration  a(0)  1(3)  2(2)  3(3)  4(5)  5(4)  7(2)  9(5)  6(2)    8(4)   10(1)   11(2)      w(0)
+Predecessors       []   [a]   [a]   [2]   [1]   [4]   [4]   [4]   [5]  [5, 9]  [3, 8]  [7, 6]  [10, 11]
+Earliest date       0     0     0     2     3     8     8     8    12      12      13      16        18
+
+Latest date table n°4: 
+
+Rank                  0     1     1     2          2       3     3     3     4     4      4      5     6
+Task & duration    a(0)  1(3)  2(2)  3(3)       4(5)    5(4)  7(2)  9(5)  6(2)  8(4)  10(1)  11(2)  w(0)
+Successors       [1, 2]   [4]   [3]  [10]  [5, 7, 9]  [6, 8]   [8]  [10]  [11]  [11]    [w]    [w]    []
+Latest date           0     0    12    14          3       8    10    12    14    12     17     16    18
+
+Float table n°4: 
+
+Rank                  0     1     1     2          2       3     3     3     4     4      4      5     6
+Task & duration    a(0)  1(3)  2(2)  3(3)       4(5)    5(4)  7(2)  9(5)  6(2)  8(4)  10(1)  11(2)  w(0)
+Successors       [1, 2]   [4]   [3]  [10]  [5, 7, 9]  [6, 8]   [8]  [10]  [11]  [11]    [w]    [w]    []
+Earliest date         0     0     0     2          3       8     8     8    12    12     13     16    18
+Latest date           0     0    12    14          3       8    10    12    14    12     17     16    18
+Free float            0     0     0     8          0       0     2     0     2     0      4      0     0
+Total float           0     0    12    12          0       0     2     4     2     0      4      0     0
+
+Critical paths n°4: 
+
+a -> 1 -> 4 -> 5 -> 8 -> 11 -> w -> 
+
+////////////////////////////////////////////////////////////////////////////////////////
+

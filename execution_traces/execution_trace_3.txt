@@ -1,0 +1,127 @@
+
+Enter the number of the table: 3
+
+We add a new entry 'a' to the table of constraints.
+We add a new exit 'w' to the table of constraints.
+
+
+Number of old entries: 1 | List of old entries: ['1', '2']
+Number of old exits: 1 | List of old exits: ['8', '9', '10']
+
+Tables of constraints n°3:
+
+Tasks  Duration    Constraints
+a             0             []
+1             2            [a]
+2             5            [a]
+3             4      [1, 2, 4]
+4             2            [2]
+5             5            [4]
+6             5            [5]
+7             9            [6]
+8             1  [4, 6, 7, 12]
+9             5      [5, 6, 7]
+10            9           [11]
+11            1            [4]
+12            1            [3]
+w             0     [8, 9, 10]
+
+
+Value matrix n°3:
+
+Tasks  a  1  2  3  4  5  6  7  8  9 10 11 12  w
+a      -  0  0  -  -  -  -  -  -  -  -  -  -  -
+1      -  -  -  2  -  -  -  -  -  -  -  -  -  -
+2      -  -  -  5  5  -  -  -  -  -  -  -  -  -
+3      -  -  -  -  -  -  -  -  -  -  -  -  4  -
+4      -  -  -  2  -  2  -  -  2  -  -  2  -  -
+5      -  -  -  -  -  -  5  -  -  5  -  -  -  -
+6      -  -  -  -  -  -  -  5  5  5  -  -  -  -
+7      -  -  -  -  -  -  -  -  9  9  -  -  -  -
+8      -  -  -  -  -  -  -  -  -  -  -  -  -  1
+9      -  -  -  -  -  -  -  -  -  -  -  -  -  5
+10     -  -  -  -  -  -  -  -  -  -  -  -  -  9
+11     -  -  -  -  -  -  -  -  -  -  1  -  -  -
+12     -  -  -  -  -  -  -  -  1  -  -  -  -  -
+w      -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+Method of eliminating entry points
+
+Entry point(s) found: ['a']
+Removing entry point(s)...
+
+Entry point(s) found: ['1', '2']
+Removing entry point(s)...
+
+Entry point(s) found: ['4']
+Removing entry point(s)...
+
+Entry point(s) found: ['3', '5', '11']
+Removing entry point(s)...
+
+Entry point(s) found: ['6', '10', '12']
+Removing entry point(s)...
+
+Entry point(s) found: ['7']
+Removing entry point(s)...
+
+Entry point(s) found: ['8', '9']
+Removing entry point(s)...
+
+Entry point(s) found: ['w']
+Removing entry point(s)...
+
+No more task in the graph...
+
+The graph n°3 contains a cycle : False
+The graph n°3 contains a negative duration : False
+The graph n°3 is a scheduling graph.
+
+Rank table n°3: 
+
+Task Rank
+a       0
+1       1
+2       1
+4       2
+3       3
+5       3
+11      3
+6       4
+10      4
+12      4
+7       5
+8       6
+9       6
+w       7
+
+Earliest date table n°3: 
+
+Rank                0     1     1     2          3     3      3     4      4      4     5              6           6            7
+Task & duration  a(0)  1(2)  2(5)  4(2)       3(4)  5(5)  11(1)  6(5)  10(9)  12(1)  7(9)           8(1)        9(5)         w(0)
+Predecessors       []   [a]   [a]   [2]  [1, 2, 3]   [3]    [3]   [5]    [8]    [4]  [11]  [3, 11, 6, 9]  [5, 11, 6]  [10, 12, 7]
+Earliest date       0     0     0     5          7     7      7    12      8     11    17             26          26           31
+
+Latest date table n°3: 
+
+Rank                  0     1       1              2     3       3      3          4      4      4       5     6     6     7
+Task & duration    a(0)  1(2)    2(5)           4(2)  3(4)    5(5)  11(1)       6(5)  10(9)  12(1)    7(9)  8(1)  9(5)  w(0)
+Successors       [1, 2]   [3]  [3, 4]  [3, 5, 8, 11]  [12]  [6, 9]   [10]  [7, 8, 9]    [w]    [8]  [8, 9]   [w]   [w]    []
+Latest date           0    23       0              5    25       7     21         12     22     29      17    30    26    31
+
+Float table n°3: 
+
+Rank                  0     1       1              2     3       3      3          4      4      4       5     6     6     7
+Task & duration    a(0)  1(2)    2(5)           4(2)  3(4)    5(5)  11(1)       6(5)  10(9)  12(1)    7(9)  8(1)  9(5)  w(0)
+Successors       [1, 2]   [3]  [3, 4]  [3, 5, 8, 11]  [12]  [6, 9]   [10]  [7, 8, 9]    [w]    [8]  [8, 9]   [w]   [w]    []
+Earliest date         0     0       0              5     7       7      7         12      8     11      17    26    26    31
+Latest date           0    23       0              5    25       7     21         12     22     29      17    30    26    31
+Free float            0     5       0              0     0       0      0          0     14     14       0     4     0     0
+Total float           0    23       0              0    18       0     14          0     14     18       0     4     0     0
+
+Critical paths n°3: 
+
+a -> 2 -> 4 -> 5 -> 6 -> 7 -> 9 -> w -> 
+
+////////////////////////////////////////////////////////////////////////////////////////
+
