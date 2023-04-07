@@ -4,8 +4,9 @@ from options import *
 This is the main class of the program
 """
 
-execution_trace = open("execution_trace.txt",'w')  # file to write the execution trace
-execution_trace.close()  # close the file
+for i in range(1, nb_of_files+1):
+    execution_trace = open("execution_traces/execution_trace_" + str(i) + ".txt", 'w')  # file to write the execution trace
+    execution_trace.close()  # close the file
 
 class Main:
     def __init__(self):
@@ -64,8 +65,10 @@ class Main:
         self.all_paths = []
 
     def print_exe(self, obj):   # print the object in the execution trace file
-        with open("execution_trace.txt", "a") as f:
-            print(obj, file=f)
+        if 0 < self.table <= nb_of_files:
+            with open("execution_traces/execution_trace_"+str(self.table)+".txt", "a") as f:
+                print(obj, file=f)
+            return
         return
 
 
@@ -78,7 +81,6 @@ class Main:
         """
         Home Screen
         """
-        self.print_exe(welcome)
         print(welcome)
         while self.runnable:  # while the user wants to continue
             try:
@@ -86,7 +88,7 @@ class Main:
                 self.print_exe("Enter the number of the table: " + str(self.table))
             except ValueError:
                 self.table = -1
-            while self.table not in range(0, 15):   # while the table number is not valid
+            while self.table not in range(1, 13):   # while the table number is not valid
                 print("\nInvalid table number")
                 self.print_exe("\nInvalid table number")
                 try:
@@ -95,6 +97,9 @@ class Main:
                 except ValueError:
                     self.table = -1
             self.file_table = self.file + "table " + str(self.table) + ".txt"   # path of the table
+            execution_trace_file = open("execution_traces/execution_trace_" + str(self.table) + ".txt", 'w')  # file to write the execution trace
+            execution_trace_file.close()  # close the file
+            self.print_exe("\nEnter the number of the table: " + str(self.table))
             self.fill_constraint_table(self.file_table)   # create the table of constraints
             self.create_value_matrix()      # create the value matrix
 
@@ -174,23 +179,21 @@ class Main:
             """
 
             print("\nWould you like to continue? (y/n)")
-            self.print_exe("\nWould you like to continue? (y/n)")
 
             answer = input()
             answer = answer.strip()
-            self.print_exe(answer)
 
             while answer not in ['y', 'n', 'Y', 'N']:  # check if the answer is valid
                 print("Invalid answer")
                 self.print_exe("Invalid answer")
 
                 print("\nWould you like to continue? (y/n)")
-                self.print_exe("\nWould you like to continue? (y/n)")
                 answer = input()
                 self.print_exe(answer)
             if answer == 'n' or answer == 'N':   # if the answer is no
                 self.runnable = False
-                self.print_exe(goodbye)
+                print(new_line)
+                self.print_exe(new_line)
                 print(goodbye)
                 sys.exit()
             else:                               # if the answer is yes
