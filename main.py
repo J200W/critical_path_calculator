@@ -485,17 +485,22 @@ class Main:
         # list of tasks from rank 0 to n
         tasks = self.df_earliest_date.loc["Task & duration"].to_list()
 
+        # remove the duration from the tasks
+        for i in range (len(tasks)):
+            tasks[i] = tasks[i].split("(")[0]
+
         # add the predecessors to the table
-        predecessors = [self.get_predecessors_value(self.df_value_matrix.copy(), i, self.rank_table.index) for i in self.rank_table.index]
-        successors = [self.get_successors_constraint(i, self.rows_tasks) for i in self.rank_table.index]
+        predecessors = []
+        for j in range(len(tasks)):
+            predecessors.append(self.get_predecessors_value(value_matrix=self.df_value_matrix, task=tasks[j], rows=self.rows_tasks))
+
+        successors = []
+        for j in range(len(tasks)):
+            successors.append(self.get_successors_constraint(task=tasks[j], rows=self.rows_tasks))
 
         # add the successors and the predecessors to the table
         self.df_earliest_date.loc["Predecessors"] = predecessors
         self.df_latest_date.loc["Successors"] = successors
-
-        # remove the duration from the tasks
-        for i in range (len(tasks)):
-            tasks[i] = tasks[i].split("(")[0]
 
         # dictionary of the earliest durations
         self.task_and_duration = dict()

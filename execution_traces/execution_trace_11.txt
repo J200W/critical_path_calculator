@@ -90,7 +90,7 @@ Earliest date table n°11:
 
 Rank                0     1     2       3       4       4     5       6             7     8
 Task & duration  a(0)  1(1)  5(5)    4(2)    2(1)    6(6)  3(4)    7(3)          8(0)  w(0)
-Predecessors       []   [a]   [1]  [1, 6]  [1, 2]  [2, 6]   [5]  [4, 6]  [5, 2, 3, 7]   [8]
+Predecessors       []   [a]   [1]  [1, 5]  [1, 4]  [4, 5]   [2]  [3, 5]  [2, 4, 6, 7]   [8]
 Earliest date       0     0     1       6       8       8     9      13            16    16
 
 Latest date table n°11: 

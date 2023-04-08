@@ -82,10 +82,10 @@ w       4
 
 Earliest date table n°8: 
 
-Rank                0     1     1     1     1       1           2     2       2        2             3     4
-Task & duration  a(0)  4(4)  5(5)  6(6)  7(7)  10(10)        1(1)  2(2)    3(3)     8(9)          9(9)  w(0)
-Predecessors       []   [a]   [a]   [a]   [a]     [a]  [7, 10, 9]   [2]  [1, 9]  [10, 2]  [4, 5, 6, 3]   [8]
-Earliest date       0     0     0     0     0       0          10     7      10        7            16    25
+Rank                0     1     1     1     1       1           2     2        2       2             3     4
+Task & duration  a(0)  4(4)  5(5)  6(6)  7(7)  10(10)        1(1)  2(2)     3(3)    8(9)          9(9)  w(0)
+Predecessors       []   [a]   [a]   [a]   [a]     [a]  [4, 5, 10]   [7]  [6, 10]  [5, 7]  [1, 2, 3, 8]   [9]
+Earliest date       0     0     0     0     0       0          10     7       10       7            16    25
 
 Latest date table n°8: 
 
